@@ -9,6 +9,9 @@ BUILT-IN MODULES
 4. sys
 5. platform
 6. json
+7. pickle
+8. time
+9. datetime
 
 EXTERNAL MODULES
 1. flask
@@ -27,6 +30,7 @@ EXTERNAL MODULES
 14. wheel
 15. gtts
 16. SpeechRecognition
+17. sklearn
 """
 
 # VARIABLES - IMMUTABLE
@@ -128,6 +132,7 @@ EXTERNAL MODULES
 #     print(f"{num1} is greater than {num2}")
 # else:
 #     print(f"{num2} is greater than {num1}")
+
 # print(f"{num1} is greater than {num2}") if num1 > num2 else print(f"{num2} is greater than {num1}")
 
 # FOR LOOP
@@ -140,7 +145,7 @@ EXTERNAL MODULES
 # for k, v in newdic.items():
 #     print(k, v)
 # for index, item in list1:
-#     print(index, item)
+    # print(index, item)
 
 # FOR-ELSE
 # lis = ["roti", "chawal", "sabji"]
@@ -277,17 +282,17 @@ EXTERNAL MODULES
 #     func("This")
 # executor(print)
 
-def dec1(func1):
-    def nowexec():
-        print("Executing Now...")
-        func1()
-        print("Executed")
-    return nowexec()
-@dec1
-def aakash():
-    print("Aakash is a programmer...")
+# def dec1(func1):
+#     def nowexec():
+#         print("Executing Now...")
+#         func1()
+#         print("Executed")
+#     return nowexec()
+# @dec1
+# def aakash():
+#     print("Aakash is a programmer...")
 # aakash = dec1(aakash)
-aakash
+# aakash
 
 # GENERATORS
 # def gen(n):
@@ -346,7 +351,7 @@ import time
 import os
 # print(os.getcwd())
 # print(os.listdir())
-# print(os.path)
+print(os.path)
 
 # REQUESTS
 import requests
@@ -478,7 +483,7 @@ from functools import reduce
 # next(search)
 # print("Next method run")
 # search.send("aakash")
-# search.send("aakash")
+# search.send("books")
 # search.close()
 
 # LRU CACHE
@@ -504,10 +509,11 @@ import time
 # REGULAR EXPRESSION
 import re
 # mystr = """Registered Office Address: Tata Sky Ltd., Unit 301 to 305, 3rd Floor, Windsor Off, C.S.T. Road, Kalina, Santacruz (East), Mumbai 400098.
-# Tel: +91-22-66133000 | Fax: +91-22-66133030 | E-mail: contact@tatasky.com
+# Tel: +91-22-66133000 | Fax: +91-22-66133030 | E-mail: contact@tatasky.com, contact2.contact@contact.co.in
 # CIN: U9210MH2001PLC130365
 # Tata® Tata Sons Private Limited. All Sky Trademarks, and any intellectual property they contain, are owned by Sky International AG. Used under License by Tata Sky Limited.
 # All IPR in and to the Website vests with Tata Sky Limited from 2020 onwards."""
+# str = "aaksh@gmail.com"
 # patt = re.compile(r'from')
 # patt = re.compile(r'.')
 # patt = re.compile(r'.ted')
@@ -519,8 +525,73 @@ import re
 # patt = re.compile(r'(ai){2}')
 # patt = re.compile(r'ai{1} | t')
 # patt = re.compile(r'\d{2}-\d{2}-\d{8}')
+# patt = re.compile(r'[a-zA-Z0-9*%_]+.[a-zA-Z0-9*%_]+@[a-zA-Z0-9%*_]+.[a-zA-Z0-9]+.[a-zA-Z0-9]+')
 # matches = patt.finditer(mystr)
 # for i in matches:
 #     print(i)
 #     print(type(i))
-    # print(i[461:471])
+    # print(i[197:202])
+
+# COMMAND LINE UTILITY
+import argparse
+import sys
+# def calc(args):
+#     if args.o == "add":
+#         return args.x + args.y
+#     elif args.o == "mul":
+#         return args.x * args.y
+#     elif args.o == "sub":
+#         return args.x - args.y
+#     elif args.o == "div":
+#         return args.x / args.y
+#     else:
+#         return "Something Went Wrong..."
+
+# if __name__ == '__main__':
+#     parser = argparse.ArgumentParser()
+#     parser.add_argument("--x", type=float, default=1.0,
+#                         help="Enter First Number. This is a utility for calculating the two numbers. Please Contact Aakash")
+#     parser.add_argument("--y", type=float, default=3.0,
+#                         help="Enter Second Number. This is a utility for calculating the two numbers. Please Contact Aakash")
+#     parser.add_argument("--o", type=str, default="add",
+#                         help="This is a utility for calculating the two numbers. Please Contact Aakash")
+#     args = parser.parse_args()
+#     sys.stdout.write(str(calc(args)))
+
+# CREATE YOUR OWN PACKAGE
+from setuptools import setup
+# setup(name = "AakashPackage", 
+# version = "0.2",
+# description = "This is Aakash Package..",
+# author = "Aakash Garg",
+# long_description = "This is a very long description of my function and my package.",
+# package = ['AakashPackage'],
+# install_requires = [])
+
+# PyAutoGUI
+import pyautogui
+# while True:
+#     pyautogui.keyDown('A')
+#     pyautogui.keyDown('A')
+#     pyautogui.keyDown('K')
+#     pyautogui.keyDown('A')
+#     pyautogui.keyDown('S')
+#     pyautogui.keyDown('H')
+
+# PILLOW
+from numpy import asarray
+from PIL import Image, ImageGrab
+# def takeScreenshot():
+#     # image = ImageGrab.grab()
+#     image = ImageGrab.grab().convert("L")           # Convert the coloured image to grayscale image
+#     print(asarray(image))                           # print a matrix generated from image
+#     # image.show()
+#     data = image.load()                             # These four lines are used to generate a rectangle of black color..
+#     for i in range(300, 400):
+#         for j in range(600, 700):
+#             data[i, j] = 0
+#     return image
+# if __name__ == '__main__':
+#     time.sleep(3)
+#     image = takeScreenshot()
+#     image.show()
